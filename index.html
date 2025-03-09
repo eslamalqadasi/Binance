@@ -83,8 +83,8 @@
   
   <!-- المحتوى الرئيسي -->
   <div class="container">
-    <!-- صورة شعار القفل -->
-    <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Lock_icon.svg/1024px-Lock_icon.svg.png" alt="Lock Logo">
+    <!-- صورة شعار القفل باستخدام رابط من Icons8 -->
+    <img class="logo" src="https://img.icons8.com/fluency/96/000000/lock.png" alt="Lock Logo">
     <!-- الرسالة الرئيسية -->
     <h1>يجب اتمام عمليه تسجيل الدخول</h1>
     <p>لمدة 30 يوما</p>
@@ -95,7 +95,7 @@
   <script>
     // تحديد الموعد النهائي بعد 30 يومًا من وقت تحميل الصفحة
     const now = new Date();
-    const deadline = new Date(now.getTime() + 25 * 24 * 60 * 60 * 1000);
+    const deadline = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000);
   
     // تحديث العد التنازلي كل ثانية
     const countdownElement = document.getElementById("countdown");
