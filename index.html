@@ -95,7 +95,7 @@
   <script>
     // تحديد الموعد النهائي بعد 30 يومًا من وقت تحميل الصفحة
     const now = new Date();
-    const deadline = new Date(now.getTime() + 24 * 60 * 60 * 1000);
+    const deadline = new Date(now.getTime() + 22 * 60 * 60 * 1000);
   
     // تحديث العد التنازلي كل ثانية
     const countdownElement = document.getElementById("countdown");
@@ -104,8 +104,8 @@
       const distance = deadline - currentTime;
   
       // حساب الأيام والساعات والدقائق والثواني
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const days = Math.floor(distance / (1000 * 60 * 60 * 22));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 22)) / (1000 * 60 * 60));
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
   
